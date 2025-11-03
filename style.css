@@ -1,0 +1,78 @@
+/* dasar */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #d9e8ee;
+    color: #111;
+}
+
+/* halaman */
+.page { display: none; padding: 20px; }
+.page.active { display: block; }
+
+.judul { text-align:center; font-size:28px; margin-bottom:12px; }
+.subjudul { margin-top:24px; margin-bottom:8px; }
+
+/* actions */
+.top-actions { display:flex; gap:12px; justify-content:center; margin-bottom:16px; }
+.btn-green { background:#4caf50; color:white; padding:10px 14px; border-radius:8px; border:none; cursor:pointer; font-weight:bold; }
+.btn-red { background:#e53935; color:white; padding:10px 14px; border-radius:8px; border:none; cursor:pointer; font-weight:bold; }
+
+/* film grid */
+.film-container {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+    gap:20px;
+}
+
+/* card film */
+.film-card {
+    background:#2196f3;
+    border-radius:12px;
+    padding:8px;
+    text-align:center;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 6px 12px rgba(0,0,0,0.12);
+    transition: transform .14s ease;
+}
+.film-card:hover { transform: translateY(-6px); }
+
+.poster { width:100%; height:210px; object-fit:cover; border-radius:8px; }
+.judul-film { margin-top:10px; font-weight:700; }
+
+/* detail */
+.poster-detail { width:60%; display:block; margin:12px auto; border-radius:10px; }
+
+/* tombol kembali dan tombol umum */
+.btn-back { background:#ff5252; border:none; padding:10px 14px; color:white; border-radius:8px; cursor:pointer; }
+.btn-yellow { background:#ffeb3b; border:none; padding:12px 18px; border-radius:8px; font-weight:bold; cursor:pointer; }
+
+/* waktu */
+.waktu-container { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:18px; }
+.btn-waktu { background:#ffe082; border:none; padding:12px; border-radius:8px; cursor:pointer; transition: all .12s ease; }
+.btn-waktu.pilih { background:#ffca28; transform:scale(1.03); box-shadow: 0 6px 12px rgba(0,0,0,0.12); }
+
+/* kursi grid */
+.kursi-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:18px; }
+.kursi { padding:12px; border-radius:10px; text-align:center; font-weight:700; cursor:pointer; transition: all .12s ease; user-select:none; border: 2px solid transparent; }
+.kursi.hijau { background:#8bc34a; color:#083006; }
+.kursi.merah { background:#e53935; color:white; cursor:not-allowed; opacity:0.98; }
+.kursi.pilih { transform:scale(1.04); border:3px solid #222; box-shadow:0 8px 18px rgba(0,0,0,0.18); }
+
+/* layout input & boxes */
+.box { background:white; padding:14px; margin:10px 0; border-radius:10px; }
+.input { width:100%; padding:10px; border-radius:8px; border:1px solid #bdbdbd; }
+
+/* data list style (di halaman utama) */
+.data-list { display:flex; flex-direction:column; gap:12px; margin-top:10px; }
+.data-card { background:white; padding:12px; border-radius:10px; box-shadow:0 6px 12px rgba(0,0,0,0.06); }
+.data-row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.data-row b { margin-right:6px; color:#333; }
+
+/* responsive minor */
+@media (max-width:600px) {
+    .poster { height:160px; }
+    .poster-detail { width:90%; }
+    .kursi-grid { grid-template-columns:repeat(4,1fr); }
+}
